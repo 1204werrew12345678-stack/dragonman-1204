@@ -1038,3 +1038,57 @@
         animation-iteration-count: 1 !important;
       }
     }
+
+    /* 修正手機版下拉選單被內容覆蓋的問題 */
+    @media (max-width: 800px) {
+    
+      /* 提高整個導覽列的層級 */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        overflow: visible;
+      }
+    
+      /* 下拉選單的父層 */
+      nav .links {
+        position: relative;
+        z-index: 9999;
+        overflow-x: auto;
+        overflow-y: visible;
+      }
+    
+      .dropdown {
+        position: relative;
+        z-index: 10000;
+      }
+    
+      /* 展開中的選單 */
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 0;
+        transform: none;
+    
+        z-index: 10001;
+    
+        min-width: 180px;
+        max-width: 85vw;
+        max-height: 60vh;
+        overflow-y: auto;
+    
+        background: rgba(8, 9, 13, 0.98);
+        border: 1px solid rgba(255, 106, 0, 0.8);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+      }
+    
+      .dropdown-menu.show {
+        display: block;
+      }
+    
+      /* 其他內容不應蓋住導覽列 */
+      .hero,
+      .hero-content {
+        z-index: auto;
+      }
+    }
