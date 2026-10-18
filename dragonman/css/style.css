@@ -596,4 +596,445 @@
 	/* 平滑滾動 */
 	html {
 	  scroll-behavior: smooth;
-	}
+	}	
+	
+    /* DRAGONMAN 手機版完整優化  請貼在整份 CSS 的最底部 */
+    
+    /* 避免手機版產生不必要的水平捲動 */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      min-width: 0;
+      overflow-x: clip;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    /* 所有圖片與表單元素不超出畫面 */
+    img,
+    video,
+    iframe {
+      max-width: 100%;
+    }
+    
+    input,
+    button,
+    textarea,
+    select {
+      max-width: 100%;
+      font: inherit;
+    }
+    
+    /* 平板與手機 */
+    @media (max-width: 800px) {
+    
+      /* ---------- 全站基本設定 ---------- */
+    
+      body {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+    
+      section {
+        padding: 48px 5%;
+        scroll-margin-top: 80px;
+      }
+    
+      /* ---------- 導覽列 ---------- */
+    
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    
+        height: auto;
+        min-height: 60px;
+    
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    
+        gap: 10px;
+        padding: 12px 5%;
+    
+        background: rgba(8, 9, 13, 0.96);
+        backdrop-filter: blur(12px);
+      }
+    
+      nav .logo {
+        flex: 0 1 auto;
+        min-width: 0;
+    
+        font-size: clamp(17px, 4.5vw, 22px);
+        letter-spacing: 0.5px;
+        word-spacing: 2px;
+      }
+    
+      nav .links {
+        order: 3;
+        grid-column: auto;
+    
+        width: 100%;
+        min-width: 0;
+    
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    
+        gap: 22px;
+        padding: 5px 0 3px;
+    
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    
+        scrollbar-width: none;
+      }
+    
+      nav .links::-webkit-scrollbar {
+        display: none;
+      }
+    
+      .dropdown {
+        flex: 0 0 auto;
+      }
+    
+      .dropdown-title {
+        display: inline-block;
+        padding: 7px 2px;
+        min-height: 40px;
+        line-height: 26px;
+      }
+    
+      /* 下拉選單在手機上保持可操作 */
+      .dropdown-menu {
+        top: calc(100% + 2px);
+        left: 0;
+        transform: none;
+    
+        min-width: 160px;
+        max-width: min(240px, 85vw);
+    
+        max-height: 60vh;
+        overflow-y: auto;
+    
+        font-size: 15px;
+      }
+    
+      .dropdown-menu a {
+        padding: 12px 15px;
+        white-space: normal;
+      }
+    
+      nav .tag {
+        flex: 0 0 auto;
+        max-width: 45%;
+    
+        padding: 6px 10px;
+        margin: 0;
+    
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
+    
+        transform: none;
+      }
+    
+      /* ---------- Hero 主視覺 ---------- */
+    
+      .hero {
+        min-height: auto;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding: 65px 6% 55px;
+        overflow: hidden;
+      }
+    
+      .hero-content {
+        width: 100%;
+        max-width: 100%;
+    
+        transform: none;
+      }
+    
+      /* ---------- 背景龍 ---------- */
+    
+      .dragon {
+        position: fixed;
+        left: 50%;
+        top: 48%;
+    
+        font-size: clamp(220px, 65vw, 420px);
+        opacity: 0.09;
+    
+        filter: drop-shadow(
+          0 0 18px rgba(255, 101, 0, 0.18)
+        );
+    
+        pointer-events: none;
+      }
+    
+      /* ---------- 標題 ---------- */
+    
+      h1 {
+        font-size: clamp(34px, 9vw, 58px);
+        line-height: 1.12;
+    
+        margin-bottom: 35px;
+        overflow-wrap: anywhere;
+      }
+    
+      h2 {
+        font-size: clamp(27px, 7vw, 40px);
+        line-height: 1.3;
+    
+        margin: 0 auto 35px;
+        max-width: 100%;
+    
+        overflow-wrap: anywhere;
+      }
+    
+      h3 {
+        font-size: clamp(23px, 6vw, 32px);
+        line-height: 1.35;
+    
+        margin: 0 auto 28px;
+        max-width: 100%;
+    
+        overflow-wrap: anywhere;
+      }
+    
+      h4 {
+        font-size: clamp(20px, 5vw, 27px);
+        line-height: 1.4;
+    
+        margin: 0 auto 22px;
+        max-width: 100%;
+      }
+    
+      h5 {
+        font-size: clamp(18px, 4.5vw, 23px);
+        line-height: 1.5;
+    
+        margin: 0 auto 15px;
+        max-width: 100%;
+      }
+    
+      h6 {
+        font-size: 16px;
+        line-height: 1.7;
+    
+        margin: 0 auto 12px;
+        max-width: 100%;
+      }
+    
+      /* ---------- 一般段落 ---------- */
+    
+      .hero p {
+        max-width: 100%;
+        margin: 0 auto 20px;
+    
+        font-size: 16px;
+        line-height: 1.9;
+    
+        overflow-wrap: anywhere;
+      }
+    
+      /* ---------- 表格 ---------- */
+    
+      .status-table {
+        display: block;
+    
+        width: 100%;
+        max-width: 100%;
+    
+        margin: 0 auto 35px;
+    
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    
+        font-size: 15px;
+      }
+    
+      .status-table th,
+      .status-table td {
+        padding: 11px 13px;
+        white-space: nowrap;
+      }
+    
+      /* ---------- 快速導覽 ---------- */
+    
+      .sidebar {
+        position: sticky;
+        top: 0;
+    
+        z-index: 900;
+    
+        left: auto;
+        width: calc(100% - 20px);
+    
+        margin: 10px auto;
+        padding: 8px;
+    
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    
+        gap: 6px;
+    
+        overflow-x: auto;
+        overflow-y: hidden;
+    
+        background: rgba(8, 9, 13, 0.96);
+        backdrop-filter: blur(12px);
+    
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+    
+      .sidebar::-webkit-scrollbar {
+        display: none;
+      }
+    
+      .sidebar-title {
+        flex: 0 0 auto;
+    
+        margin: 0 5px 0 2px;
+        font-size: 14px;
+    
+        white-space: nowrap;
+      }
+    
+      .sidebar a {
+        flex: 0 0 auto;
+    
+        margin: 0;
+        padding: 8px 12px;
+    
+        min-height: 38px;
+    
+        font-size: 14px;
+        white-space: nowrap;
+      }
+    
+      /* ---------- 回到頂部 ---------- */
+    
+      .back-to-top {
+        right: 15px;
+        bottom: calc(15px + env(safe-area-inset-bottom));
+    
+        width: 45px;
+        height: 45px;
+    
+        font-size: 23px;
+      }
+    
+      /* ---------- Footer ---------- */
+    
+      footer {
+        padding: 22px 6%;
+        padding-bottom: calc(
+          22px + env(safe-area-inset-bottom)
+        );
+    
+        font-size: 13px;
+        line-height: 1.8;
+      }
+    
+      /* ---------- 其他版面 ---------- */
+    
+      .stats,
+      .challenge-grid,
+      .build {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    
+      /* 避免長網址或英文單字撐開版面 */
+      p,
+      td,
+      th {
+        overflow-wrap: anywhere;
+      }
+    
+      /* 手機通常沒有 hover，避免滑鼠效果造成誤判 */
+      a,
+      button {
+        -webkit-tap-highlight-color: rgba(255, 106, 0, 0.15);
+      }
+    }
+    
+    /* 小型手機：例如 375px 以下 */
+    @media (max-width: 400px) {
+    
+      nav {
+        padding: 10px 4%;
+        gap: 8px;
+      }
+    
+      nav .logo {
+        font-size: 17px;
+      }
+    
+      nav .tag {
+        padding: 5px 8px;
+        font-size: 11px;
+      }
+    
+      nav .links {
+        gap: 17px;
+        font-size: 15px;
+      }
+    
+      .hero {
+        padding: 48px 5% 40px;
+      }
+    
+      h1 {
+        font-size: clamp(30px, 9vw, 36px);
+      }
+    
+      h2 {
+        font-size: 26px;
+      }
+    
+      .status-table th,
+      .status-table td {
+        padding: 9px 10px;
+        font-size: 14px;
+      }
+    
+      .back-to-top {
+        right: 10px;
+        width: 42px;
+        height: 42px;
+      }
+    }
+    
+    /* 關閉系統減少動態效果時，降低動畫 */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    
+      .dragon {
+        animation: none;
+      }
+    
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
