@@ -1091,4 +1091,26 @@
       .hero-content {
         z-index: auto;
       }
+    }	
+	
+    function toggleMenu(title) {
+      const currentMenu = title.nextElementSibling;
+      const shouldOpen = !currentMenu.classList.contains("show");
+    
+      // 關閉其他下拉選單
+      document.querySelectorAll("nav .dropdown-menu.show")
+        .forEach(menu => menu.classList.remove("show"));
+    
+      // 切換目前選單
+      if (shouldOpen) {
+        currentMenu.classList.add("show");
+      }
     }
+    
+    // 點擊選單外部時關閉
+    document.addEventListener("click", function(event) {
+      if (!event.target.closest("nav .dropdown")) {
+        document.querySelectorAll("nav .dropdown-menu.show")
+          .forEach(menu => menu.classList.remove("show"));
+      }
+    });
