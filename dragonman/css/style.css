@@ -1113,4 +1113,132 @@
         document.querySelectorAll("nav .dropdown-menu.show")
           .forEach(menu => menu.classList.remove("show"));
       }
-    });
+    });	
+	
+/* =================================
+   DRAGONMAN 手機版導覽列修正
+================================= */
+
+@media (max-width: 800px) {
+
+  nav {
+    position: relative;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    height: auto;
+    min-height: 0;
+
+    padding: 12px 16px;
+
+    overflow: visible;
+    gap: 10px;
+  }
+
+  /* Logo 與右側標籤 */
+  nav .logo {
+    order: 1;
+    align-self: flex-start;
+
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  nav .tag {
+    order: 2;
+    align-self: flex-start;
+
+    max-width: 100%;
+    margin: 0;
+    padding: 7px 12px;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    transform: none;
+  }
+
+  /* 下拉選單導覽列 */
+  nav .links {
+    order: 3;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    gap: 5px 14px;
+
+    position: relative;
+    z-index: 10000;
+
+    overflow: visible;
+    padding: 5px 0;
+  }
+
+  nav .dropdown {
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 10001;
+  }
+
+  nav .dropdown-title {
+    display: block;
+    padding: 8px 2px;
+
+    min-height: 40px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  nav .dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: none;
+
+    z-index: 10002;
+
+    width: max-content;
+    min-width: 155px;
+    max-width: 85vw;
+    max-height: 55vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: rgba(8, 9, 13, 0.98);
+    border: 1px solid rgba(255, 106, 0, 0.7);
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  }
+
+  nav .dropdown-menu.show {
+    display: block;
+  }
+
+  nav .dropdown-menu a {
+    display: block;
+    padding: 12px 15px;
+
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  /* 主內容不要蓋住導覽列 */
+  .hero {
+    position: relative;
+    z-index: auto;
+  }
+
+  .hero-content {
+    z-index: auto;
+  }
+}
