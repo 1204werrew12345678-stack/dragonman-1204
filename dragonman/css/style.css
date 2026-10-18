@@ -1442,3 +1442,180 @@
     max-width: 82vw;
   }
 }
+
+/* =========================================
+   DRAGONMAN 手機版下拉選單：最終修正
+========================================= */
+
+@media (max-width: 800px) {
+
+  /* 1. 主導覽列必須位於頁面內容上方 */
+  body > nav,
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+
+    height: auto;
+    min-height: 0;
+
+    overflow: visible;
+    isolation: isolate;
+  }
+
+  /* 2. Logo、標籤與下拉選單分列 */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 12px 5%;
+  }
+
+  nav .logo {
+    order: 1;
+    min-width: 0;
+    font-size: clamp(17px, 4.5vw, 22px);
+  }
+
+  nav .tag {
+    order: 2;
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+    font-size: 11px;
+  }
+
+  /* 3. 下拉選單容器不可裁切內容 */
+  nav .links {
+    order: 3;
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 5px 16px;
+    padding: 5px 0;
+
+    overflow: visible;
+  }
+
+  nav .dropdown {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+  }
+
+  nav .dropdown-title {
+    display: block;
+    min-height: 40px;
+    padding: 8px 2px;
+
+    font-size: 15px;
+    white-space: nowrap;
+
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  /* 4. 下拉選單本身顯示在導覽列前景 */
+  nav .dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    transform: none;
+
+    z-index: 99999;
+
+    width: max-content;
+    min-width: 160px;
+    max-width: 85vw;
+    max-height: 55vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #101014;
+    border: 1px solid rgba(255, 106, 0, 0.85);
+    border-radius: 8px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  nav .dropdown-menu.show {
+    display: block;
+  }
+
+  nav .dropdown-menu a {
+    display: block;
+    padding: 12px 16px;
+
+    color: #FFEBCD;
+    font-size: 15px;
+    line-height: 1.5;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  nav .dropdown-menu a:hover,
+  nav .dropdown-menu a:active {
+    color: #FF6500;
+    background-color: rgba(255, 106, 0, 0.12);
+  }
+
+  /* 5. 快速導覽保持在主導覽列下方 */
+  .sidebar {
+    position: relative;
+    top: auto;
+    z-index: 10;
+  }
+
+  /* 6. 取消 Hero 對下拉選單可能造成的裁切 */
+  .hero {
+    position: relative;
+    z-index: auto;
+    overflow: visible;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: auto;
+    transform: none;
+  }
+
+  /* 背景龍不攔截點擊 */
+  .dragon {
+    pointer-events: none;
+  }
+}
+
+/* 小型手機 */
+@media (max-width: 400px) {
+  nav .links {
+    gap: 5px 12px;
+  }
+
+  nav .dropdown-title {
+    font-size: 14px;
+  }
+
+  nav .dropdown-menu {
+    min-width: 145px;
+    max-width: 82vw;
+  }
+}
