@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dragonman-主頁</title>
+  
+  <link rel="icon" type="image/x-icon" href="../pic/favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style></style>
+  
+</head>
+
+<body>
+
+  <!-- 左側快速導覽 -->
+  <aside class="sidebar">
+	<div class="sidebar-title">主頁</div>
+	<a href="#challenge-introduction">挑戰簡介</a>
+	<a href="#preparatory-work">前置作業</a>
+	<a href="#thoughts-and-reflections">心得感想</a>
+  </aside>
+  
+  <nav>
+  
+    <div class="logo">🐉 <a href="index.html">DRAGONMAN 主頁</a></div>
+
+    <div class="links">
+
+    <!-- 等級 -->
+    <div class="dropdown">
+   
+      <div class="dropdown-title" onclick="toggleMenu(this)">等級 ▼</div>
+
+      <div class="dropdown-menu">
+        <a href="等級/first-sea.html">一海</a>
+        <a href="等級/second-sea.html">二海</a>
+        <a href="等級/third-sea.html">三海</a>
+      </div>
+	  
+    </div>
+
+    <!-- 一海(1) -->
+    <div class="dropdown">
+	
+      <div class="dropdown-title" onclick="toggleMenu(this)">一海(1) ▼</div>
+
+      <div class="dropdown-menu">
+        <a href="一海(1)/pirate-starter.html">起始島</a>
+        <a href="一海(1)/jungle.html">叢林</a>
+        <a href="一海(1)/pirate-village.html">海盜村</a>
+        <a href="一海(1)/desert.html">沙漠</a>
+	    <a href="一海(1)/frozen-village.html">冰凍村</a>
+	    <a href="一海(1)/marine-fortress.html">海軍堡壘</a>
+      </div>
+	  
+    </div>
+
+
+    <!-- 一海(2) -->
+    <div class="dropdown">
+	
+      <div class="dropdown-title" onclick="toggleMenu(this)">一海(2) ▼</div>
+
+      <div class="dropdown-menu">
+        <a href="一海(2)/skylands.html">天空之島</a>
+        <a href="一海(2)/prison.html">監獄</a>
+        <a href="一海(2)/colosseum.html">競技場</a>
+        <a href="一海(2)/magma-village.html">熔岩村</a>
+	    <a href="一海(2)/underwater-city.html">海底城市</a>
+	    <a href="一海(2)/upper-skylands.html">上層天空之島</a>
+	    <a href="一海(2)/fountain-city.html">噴泉城</a>
+      </div>
+	  
+    </div>
+
+    <!-- 二海 -->
+    <div class="dropdown">
+	
+      <div class="dropdown-title" onclick="toggleMenu(this)">二海 ▼</div>
+
+      <div class="dropdown-menu">
+        <a href="二海/kingdom-of-rose.html">玫瑰王國</a>
+        <a href="二海/green-zone.html">綠色區域</a>
+        <a href="二海/graveyard-island.html">墓地島</a>
+	    <a href="二海/snow-mountain.html">雪山</a>
+	    <a href="二海/hot-and-cold.html">冰火島</a>
+        <a href="二海/cursed-ship.html">詛咒船</a>
+        <a href="二海/ice-castle.html">冰之城堡</a>
+        <a href="二海/forgotten-island.html">遺忘之島</a>
+      </div>
+	  
+    </div>
+
+    <!-- 三海 -->
+    <div class="dropdown">
+	
+      <div class="dropdown-title" onclick="toggleMenu(this)">三海 ▼</div>
+
+      <div class="dropdown-menu">
+        <a href="三海/port-town.html">港口城鎮</a>
+        <a href="三海/hydra-island.html">九頭蛇島</a>
+        <a href="三海/great-tree.html">巨樹</a>
+        <a href="三海/floating-turtle.html">浮空龜島</a>
+		<a href="三海/haunted-castle.html">鬧鬼城堡</a>
+        <a href="三海/sea-of-treats.html">甜點之海</a>
+        <a href="三海/tiki-outpost.html">提基前哨站</a>
+        <a href="三海/submerged-island.html">沉沒島嶼</a>
+      </div>
+	  
+    </div>
+
+    <!-- 全龍配置 -->
+    <div class="dropdown">
+    
+	  <div class="dropdown-title" onclick="toggleMenu(this)">全龍配置 ▼</div>
+
+      <div class="dropdown-menu">
+        <a href="全龍配置/dragon-talon.html">龍拳</a>
+        <a href="全龍配置/dragon-fruit.html">龍果</a>
+        <a href="全龍配置/dragonheart.html">龍刀</a>
+        <a href="全龍配置/dragonstorm.html">龍槍</a>
+		<a href="全龍配置/draco.html">龍族</a>
+        <a href="全龍配置/dino-hood.html">龍兜帽</a>
+      </div>
+	
+    </div>
+
+    </div>
+
+	<div class="tag">BLOX FRUITS CHALLENGE-DRAGON FRUITS ONLY</div> 
+	
+  </nav>
+
+  <header class="hero">
+
+    <div class="dragon">🐉</div>
+
+    <div class="hero-content">
+    
+      <h1>
+        只用<span>龍果</span>通關 Blox Fruits<br>
+        並解鎖最好 PVP 的<span>全龍配置</span>
+      </h1>
+	
+	  <h2>
+	    <span id="challenge-introduction">挑戰簡介</span>
+	  </h2>
+	  
+      <h3>
+	    龍之試煉，正式開始！<br>
+	  </h3>
+	
+	  <h3>
+        如果從遊戲開始到最後，都只能使用 Dragon Fruit，<br>
+		究竟能走到哪裡？<br>
+	  </h3>
+	
+	  <h3>
+	    本網站記錄「只用龍果通關 Blox Fruits」的完整挑戰，<br>
+		從初入第一海開始，逐步突破各個階段，<br>
+		累積 Mastery、強化戰鬥能力，並解鎖龍果的不同型態。<br>
+	  </h3>
+	
+	  <h3>
+	    混合型態、東方龍、西方龍 ———— 每一次變身，<br>
+		都是代表著龍力量的進化。<br>
+	    Dragon 本身具備範圍攻擊、移動能力與變身機制，<br>
+		也因此能發展出不同的 PvE 與 PvP 玩法。<br>
+	  </h3>
+	
+	  <h3>
+	    不用其他果實。<br>
+	    不用逃避挑戰。<br>
+	    只靠一條龍，走完 Blox Fruits。<br>
+      </h3>	 	  
+		
+	  <h2>
+	    <span id="preparatory-work">前置作業</span>
+	  </h2>
+	  
+	  <h3>1.創立一個Roblox的帳號</h3>
+	  <h3>2.花3290元購買11000R幣</h3>
+	  <h3>3.因為使用龍果，所以購買凱多的虛擬人偶</h3>
+	  <h3>4.買下最貴的永久果:龍果(5000R)</h3>
+	  <h3>5.購買通行證:快船(350R)、雙倍金錢(450R)、雙倍經驗(450R)</h3>
+	  <h3>6.開始升級吧!</h3>
+	  
+	  <h2>
+	    <span id="thoughts-and-reflections">心得感想</span>
+	  </h2>
+	  
+	  <h3>
+		這次我挑戰只用龍果來玩《Blox Fruits》，<br>
+		一開始覺得應該不會太難，因為龍果的攻擊力很高，<br>
+		看起來就是一個很強的果實。<br>
+		不過真正開始挑戰後，<br>
+		我才發現只靠一種果實通關其實沒有想像中簡單。<br>
+	  </h3>	
+	
+	  <h3>
+		在遊玩的過程中，<br>
+		我遇到很多強大的敵人和 Boss，<br>
+		有時候明明覺得自己可以打贏，<br>
+		結果一個不小心就被打敗，<br>
+		只能重新來過。<br>
+		尤其是在比較困難的關卡，<br>
+		我需要一直練習走位和攻擊時機，<br>
+		不能只靠一直放技能。<br>
+		雖然過程中有點挫折，<br>
+		但每次成功打敗敵人時，<br>
+		都會有很大的成就感。<br>
+	  </h3>	
+	
+	  <h3>
+		這次挑戰也讓我發現，<br>
+		遊戲中不一定要使用很多不同的武器或果實，<br>
+		只要熟悉自己使用的能力，<br>
+		也可以發揮出很大的力量。<br>
+		龍果雖然很強，<br>
+		但還是需要技巧才能真正發揮它的實力。<br>
+	  </h3>
+	  
+	  <h3>
+		最後成功完成只用龍果通關的挑戰後，<br>
+		我覺得非常有成就感。<br>
+		這次經驗讓我學到，<br>
+		遇到困難時不要輕易放棄，<br>
+		多嘗試幾次、找到適合自己的方法，<br>
+		就有機會成功。<br>
+		這也是我覺得這次挑戰最好玩的地方。<br>
+	  </h3>
+    
+    </div>
+  
+  </header>
+
+  <footer>
+  
+    <p> 🐉 版權所有 © 2026 <span>dragonman</span> </p>
+
+    <p style="margin-top:10px;">
+      對於本網站有任何疑問，可以查詢
+	  <a href="https://blox-fruits.fandom.com/wiki/Blox_Fruits_Wiki" target="_blank">
+	    BF Wiki
+	  </a>
+    </p>
+	
+  </footer>
+  
+  <!-- 回到頁首 -->
+  <a href="#" class="back-to-top">↑</a>
+  
+  <script>
+    function toggleMenu(element) {
+
+      // 找到目前這個文字下面的選單
+      const menu = element.nextElementSibling;
+
+      // 關閉其他已經打開的選單
+      document.querySelectorAll('.dropdown-menu').forEach(function(otherMenu) {
+        if (otherMenu !== menu) {
+          otherMenu.classList.remove('show');
+        }
+      });
+
+      // 開啟 / 關閉目前的選單
+      menu.classList.toggle('show');
+	  }
+
+
+      // 點擊網頁其他地方時，自動收起選單
+      document.addEventListener('click', function(event) {
+
+        if (!event.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+          menu.classList.remove('show');
+        });
+        }
+
+      });
+	  
+	  /* 防止重新整理後停留在原本的捲動位置 */
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+	  /* 頁面載入後回到最上方 */
+      window.addEventListener("load", function() {
+        window.scrollTo(0, 0);
+      });
+	  
+	  // 回到頁首按鈕
+	  const backToTop = document.querySelector('.back-to-top');
+
+	  window.addEventListener('scroll', function() {
+		if (window.scrollY > 300) {
+		  backToTop.classList.add('show');
+	  } else {
+		  backToTop.classList.remove('show');
+	  }
+	  });
+		
+  </script>    
+
+</body>
+
+</html>

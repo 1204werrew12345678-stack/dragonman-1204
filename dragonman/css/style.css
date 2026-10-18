@@ -1,0 +1,599 @@
+@charset="utf-8";
+
+    /*基本設定*/
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(255, 72, 0, .22), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(255, 170, 0, .12), transparent 30%),
+        #08090d;
+      color: #fff;
+      min-height: 100vh;
+    }
+	
+	/* 導覽列 */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+	  
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+	  
+	  height: 64px;
+      padding: 0 7%;
+	  
+      background: rgba(8, 9, 13, .82);
+      backdrop-filter: blur(12px);
+      border-bottom: 3px solid rgba(255, 106, 0, .60);
+    }
+	
+	/* 左邊 Logo */
+    nav .logo {
+	  justify-self: start;
+	
+      font-size: 22px;
+      font-weight: 900;
+      color: #ff6a00;
+	  word-spacing: 5px;
+      letter-spacing: 1px;
+    }
+	
+	/* 中間導覽列 */
+	nav .links {
+      grid-column: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 35px;
+      font-size: 22px;
+      letter-spacing: 1px;
+	}
+	
+	/* 每一個下拉選單 */
+	.dropdown {
+	  position: relative;
+	}
+	
+	/* 上方可以點擊的文字 */
+	.dropdown-title {
+	  color: #FFEBCD;
+	  cursor: pointer;
+	  white-space: nowrap;
+	  user-select: none;
+	  transition: color .2s;
+	}
+
+	.dropdown-title:hover {
+	  color: #FF0000;
+	}
+
+	/* 下拉選單 */
+	.dropdown-menu {
+	  display: none;
+
+	  position: absolute;
+	  top: calc(100% + 12px);
+	  left: 50%;
+	  transform: translateX(-50%);
+
+	  min-width: 180px;
+
+	  background: rgba(8, 9, 13, .96);
+	  border: 1px solid rgba(255, 106, 0, .5);
+	  border-radius: 8px;
+
+	  box-shadow:
+        0 8px 25px rgba(0, 0, 0, .5),
+        0 0 15px rgba(255, 106, 0, .15);
+
+	  overflow: hidden;
+	  z-index: 1000;
+	}
+
+	/* JavaScript 打開選單 */
+	.dropdown-menu.show {
+	  display: block;
+	}
+
+	/* 選單裡面的超連結 */
+	.dropdown-menu a {
+	  display: block;
+
+	  padding: 12px 18px;
+	
+	  color: #FFEBCD;
+	  text-decoration: none;
+
+	  white-space: nowrap;
+
+	  transition:
+        background-color .2s,
+        color .2s;
+	}
+
+	/* 滑鼠移到選項 */
+	.dropdown-menu a:hover {
+	  color: #FF6500;
+	  background-color: rgba(255, 106, 0, .12);
+	  text-decoration: none;
+	}
+	
+	/* 右上角橘色標籤 */
+	nav .tag {
+	  display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #ff6a00;
+      border-radius: 30px;
+      color: #ff8b38;
+      margin-bottom: 20px;
+      background: rgba(255, 106, 0, .08);
+	
+	  grid-column: 3;
+	  justify-self: end;
+	  margin-bottom: 0;
+	  
+	  transform: translateX(55px);
+	}
+	
+	/* Hero */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+	  padding-top: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+	/* 背景龍 */
+    .dragon {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+
+      font-size: 600px;
+      opacity: .15;
+      color: #ff6500;
+      filter: drop-shadow(0 0 30px rgba(255, 101, 0, .25));
+
+      z-index: 0;
+      pointer-events: none;
+
+      animation: float 5s ease-in-out infinite;
+    }
+
+	/* 龍漂浮動畫 */
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, -50%) rotate(-3deg);
+      }
+
+      50% {
+        transform: translate(-50%, calc(-50% - 25px)) rotate(3deg);
+      }
+    }
+
+	/* Hero 內容 */
+    .hero-content {
+      position: relative;
+      max-width: 1500px;
+	  transform: translateY(-80px);
+    }
+	
+	/* H1 */
+	h1 {
+	  font-size: clamp(42px, 7vw, 88px);
+	  line-height: 1;
+	  text-transform: uppercase;
+	  margin-bottom: 100px;
+	  text-shadow: 0 0 30px rgba(255, 75, 0, .35);
+	  text-align: left;
+	}
+	
+	h1 span {
+	  color: #ff6500;
+	}
+		
+	/* H2 */
+	h2 {
+	  font-size: clamp(32px, 5vw, 56px);
+	  line-height: 1.2;
+	  margin: 0 auto 80px;
+	  max-width: 1100px;
+	  color: #FFEBCD;
+	  text-shadow: 0 0 20px rgba(255, 75, 0, .3);
+	  text-align: left;
+	}
+	
+	h2 span {
+	  color: #ff6500;
+	}
+		
+	/* H3 */
+	h3 {
+	  font-size: clamp(26px, 4vw, 42px);
+	  line-height: 1.3;
+	  margin: 0 auto 60px;
+	  max-width: 1100px;
+	  color: #FFEBCD;
+	  text-shadow: 0 0 15px rgba(255, 75, 0, .25);
+	  text-align: left;
+	}
+	
+	h3 span {
+	  color: #ff6500;
+	}
+		
+	/* H4 */
+	h4 {
+	  font-size: clamp(22px, 3vw, 32px);
+	  line-height: 1.4;
+	  margin: 0 auto 40px;
+	  max-width: 1100px;
+	  color: #FFEBCD;
+	  text-align: left;
+	}
+	
+	h4 span {
+	  color: #ff6500;
+	}
+		
+	/* H5 */
+	h5 {
+	  font-size: clamp(19px, 2.5vw, 26px);
+	  line-height: 1.5;
+	  margin: 0 auto 20px;
+	  max-width: 1100px;
+	  color: #FFEBCD;
+	  text-align: left;
+	}
+	
+	h5 span {
+	  color: #ff6500;
+	}
+		
+	/* H6 */
+	h6 {
+	  font-size: clamp(17px, 2vw, 22px);
+	  line-height: 1.5;
+	  margin: 0 auto 10px;
+	  max-width: 1100px;
+	  color: #DCDCDC;
+	  text-align: left;
+	}
+	
+	h6 span {
+	  color: #ff6500;
+	}
+		
+	/* 一般段落 */
+	.hero p {
+   	  color: #FFEBCD;
+	  font-size: 19px;
+	  line-height: 1.8;
+	  max-width: 1100px;
+	  margin: 0 auto 25px;
+	  text-align: left;
+	}
+	
+	/* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 20px;
+      color: #D3D3D3;
+	  background-color: #000000;
+      border-top: 3px solid rgba(255, 106, 0, .60);
+    }
+
+    footer span {
+      color: #ff6500;
+    }
+
+    @media(max-width: 800px) {
+      .stats,
+      .challenge-grid,
+      .build {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+    }
+	
+	/* 超連結 */
+	a:link {
+      color: #FFEBCD;
+      background-color: transparent;
+      text-decoration: none;
+    }
+	
+	a:visited {
+      color: #FFEBCD;
+      background-color: transparent;
+      text-decoration: none;
+	}
+	
+	a:hover {
+      color: #FF0000;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+	
+	a:active {
+      color: #FFFFFF;
+      background-color: transparent;
+      text-decoration: underline;
+	}
+	
+	/* 手機板 */
+	@media (max-width: 800px) {
+	  .stats,
+	  .challenge-grid,
+	  .build {
+	    grid-template-columns: 1fr;
+	  }
+
+	  nav {
+	    padding: 15px 5%;
+	  }
+
+	  section {
+	    padding: 65px 5%;
+	  }
+
+	}	
+	
+	/* 只修改 DRAGONMAN 主頁 */
+	nav .logo a:link,
+	nav .logo a:visited {
+	  color: #ff6500 !important;
+	  text-decoration: none;
+	}
+
+	nav .logo a:hover {
+	  color: #ff6500 !important;
+	  text-decoration: none;
+	}
+
+	nav .logo a:active {
+	  color: #ffffff !important;
+	  text-decoration: none;
+	}
+	
+	/* 等級紀錄表格 */
+	.status-table {
+	  width: 100%;
+	  max-width: 1100px;
+	  margin: 0 auto 60px;
+	  border-collapse: collapse;
+	  color: #FFEBCD;
+	  font-size: 22px;
+	}
+
+	.status-table th,
+	.status-table td {
+	  padding: 15px 20px;
+      border: 1px solid rgba(255, 106, 0, .5);
+      text-align: left;
+	}
+
+	.status-table th {
+	  color: #ff6500;
+	  background: rgba(255, 106, 0, .08);
+	  font-weight: bold;
+	}
+
+	.status-table td {
+	  background: rgba(8, 9, 13, .8);
+	}
+
+	.status-table tr:hover td {
+	  background: rgba(255, 106, 0, .12);
+	}
+	
+	/* 左側快速導覽 */	
+	.sidebar {
+	  position: fixed;
+	  left: 20px;
+	  top: 120px;
+	  z-index: 90;
+
+	  width: 130px;
+	  padding: 14px 10px;
+
+	  background: rgba(8, 9, 13, .92);
+	  border: 1px solid rgba(255, 106, 0, .55);
+	  border-radius: 12px;
+
+	  box-shadow: 0 8px 25px rgba(0, 0, 0, .45);
+
+	  backdrop-filter: blur(10px);
+	}
+
+	/* 標題 */
+	.sidebar-title {
+	  color: #ff6500;
+
+	  font-size: 18px;
+	  font-weight: 900;
+
+	  text-align: center;
+
+	  margin-bottom: 8px;
+	}
+
+	/* 等級按鈕 */
+	.sidebar a {
+	  display: block;
+
+	  padding: 9px 8px;
+	  margin: 3px 0;
+
+	  border-radius: 7px;
+
+	  color: #FFEBCD !important;
+	  text-decoration: none !important;
+
+	  text-align: center;
+
+	  font-weight: 700;
+
+	  transition:
+		background-color .2s,
+		color .2s,
+		transform .2s;
+	}
+
+	/* 滑鼠移上去 */
+	.sidebar a:hover {
+	  color: #ff6500 !important;
+
+	  background-color: rgba(255, 106, 0, .12);
+
+	  transform: translateX(3px);
+	}
+
+	/* 點擊後跳到表格時，不會被上面的導覽列擋住 */
+	.status-table {
+	  scroll-margin-top: 90px;
+	}	
+
+	span {
+	  scroll-margin-top: 90px;
+	}
+
+	/* 螢幕較小 */
+	@media (max-width: 1100px) {
+
+	  .sidebar {
+	    left: 10px;
+        width: 105px;
+	  }
+
+	  .sidebar a {
+        padding: 7px 4px;
+        font-size: 14px;
+	  }
+
+	  .sidebar-title {
+        font-size: 15px;
+      }
+
+	}
+
+	/* 手機版 */
+	@media (max-width: 800px) {
+
+	  .sidebar {
+
+		position: sticky;
+
+		top: 64px;
+
+		left: auto;
+
+		width: calc(100% - 20px);
+
+		margin: 10px auto;
+
+		padding: 8px;
+
+		display: flex;
+
+		align-items: center;
+
+		gap: 4px;
+
+		overflow-x: auto;
+	  }
+
+
+	  .sidebar-title {
+
+		flex: 0 0 auto;
+
+		margin: 0 5px 0 2px;
+	  }
+
+
+	  .sidebar a {
+
+		flex: 0 0 auto;
+
+		padding: 7px 10px;
+
+		margin: 0;
+	  }
+
+	}
+	
+	/* 回到頁首按鈕 */
+	.back-to-top {
+	  position: fixed;
+	  right: 25px;
+	  bottom: 25px;
+	  z-index: 999;
+
+	  width: 55px;
+	  height: 55px;
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  background: rgba(8, 9, 13, .92);
+	  color: #ff6500 !important;
+
+	  border: 2px solid #ff6500;
+	  border-radius: 50%;
+
+	  font-size: 28px;
+	  font-weight: bold;
+	  text-decoration: none !important;
+
+	  box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
+
+	/* 一開始隱藏 */
+	  opacity: 0;
+	  visibility: hidden;
+	  transform: translateY(10px);
+
+	  transition: opacity .3s, visibility .3s, transform .3s;
+	}
+
+	/* 滑下去後顯示 */
+	.back-to-top.show {
+	  opacity: 1;
+	  visibility: visible;
+	  transform: translateY(0);
+	}
+
+	/* 滑鼠移上去 */
+	.back-to-top:hover {
+	  background: #ff6500;
+	  color: #08090d !important;
+	  transform: translateY(-4px);
+	}
+
+	/* 平滑滾動 */
+	html {
+	  scroll-behavior: smooth;
+	}
